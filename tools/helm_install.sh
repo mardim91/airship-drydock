@@ -26,7 +26,9 @@ function install_helm_binary {
     echo "No Helm binary target location."
     exit -1
   fi
-
+  dir_name=$(dirname ${HELM})
+  pame=$(ls -a $dir_name)
+  echo "mitsaras $pame"
   if [[ -w "$(dirname ${HELM})" ]]
   then
     TMP_DIR=${BUILD_DIR:-$(mktemp -d)}
